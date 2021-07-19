@@ -101,8 +101,8 @@ module.exports = {
     new VueLoaderPlugin(),
   ],
   optimization: {
-    chunkIds: "deterministic",
-    moduleIds: "deterministic",
+    chunkIds: "named",
+    moduleIds: "named",
     mangleExports: "deterministic"
   },
   target: ['web', 'es5'],
