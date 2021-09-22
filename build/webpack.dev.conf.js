@@ -48,6 +48,19 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       poll: config.dev.poll,
     }
   },
+  // 5特有的文件监听
+  watchOptions: {
+    //默认为空，不监听的⽂件或者⽬录，⽀持正则
+    ignored: /node_modules/,
+    //监听到⽂件变化后，等300ms再去执⾏，默认300ms,
+    aggregateTimeout: 300,
+    poll: config.dev.poll,
+  },
+  // 5新增性能优化
+  performance: {
+    maxEntrypointSize: 4000000, // 入口起点的最大体积，控制 webpack 何时生成性能提示
+    maxAssetSize: 1000000, //单个资源体积(单位: bytes)，控制 webpack 何时生成性能提示
+  },
   plugins: [
     // new webpack.DefinePlugin({
     //   'process.env': require('../config/dev.env')
