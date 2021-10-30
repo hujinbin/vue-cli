@@ -1,6 +1,6 @@
 'use strict'
 const path = require('path')
-// const utils = require('./utils')
+const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
@@ -59,7 +59,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         type: 'asset/resource',
         generator: {
-          filename: 'img/[name].[contenthash].[ext]'
+          filename: utils.assetsPath('img/[name].[contenthash].[ext]')
         }
         // loader: 'url-loader',
         // options: {
@@ -71,7 +71,7 @@ module.exports = {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         type: 'asset/resource',
         generator: {
-          filename: 'media/[name].[contenthash].[ext]'
+          filename: utils.assetsPath('media/[name].[contenthash].[ext]')
         }
         // loader: 'url-loader',
         // options: {
@@ -83,7 +83,7 @@ module.exports = {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         type: 'asset/resource',
         generator: {
-          filename: 'fonts/[name].[contenthash].[ext]'
+          filename: utils.assetsPath('fonts/[name].[contenthash].[ext]')
         }
         // loader: 'url-loader',
         // options: {
